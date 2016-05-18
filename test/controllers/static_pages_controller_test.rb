@@ -19,4 +19,10 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "Contact | IBM Carpool Buddy"
   end
 
+  test "should get location" do 
+    get :location
+    assert_response :success
+    assert_select "title", "Select Location | IBM Carpool Buddy"
+  end
+
 end
