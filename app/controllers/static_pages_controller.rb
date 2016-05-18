@@ -8,7 +8,4 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def location
-  end
-
 end
