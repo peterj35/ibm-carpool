@@ -3,6 +3,7 @@
   <% if current_user!=nil && current_user.admin? %>
     | <%= link_to "delete", location, method: :delete,
                                   data: { confirm: "Are you sure?" } %>
+		| <%= link_to "edit", edit_location_path(location.id) %>
   <% end %>
 </li>
 

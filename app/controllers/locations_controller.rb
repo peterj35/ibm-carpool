@@ -30,6 +30,20 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
 
+	def edit
+		@location = Location.find(params[:id])
+	end
+
+	def update
+		@location = Location.find(params[:id])
+		if @location.update_attributes(location_params)
+			flash[:success] = "Location Updated"
+			redirect_to manage_locations_path
+		else
+			render 'edit'
+		end
+	end
+
   def destroy
     Location.find(params[:id]).destroy
     flash[:success] = "Location deleted"
