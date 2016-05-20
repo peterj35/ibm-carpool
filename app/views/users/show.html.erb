@@ -5,7 +5,17 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+				<br>
+				<%= @user.email %>
       </h1>
     </section>
   </aside>
+	<div class="col-md-8">
+		<% if @user.offer.present? %>
+			<h3>Carpool Offer:</h3>
+			<ol class="offers">
+				<%= render @offer %>
+			</ol>
+		<% end %>
+	</div>
 </div>

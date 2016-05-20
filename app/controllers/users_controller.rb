@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+		@offer = Offer.find(params[:id])
   end
 
   def new
