@@ -5,6 +5,7 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(name: "Example User", email: "user@ca.ibm.com",
                       password: "foobar", password_confirmation: "foobar")
+    @location = Location.new(name: "8200 Foo")
   end
 
   test "should be valid" do
@@ -68,5 +69,14 @@ class UserTest < ActiveSupport::TestCase
 
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?(:remember, '')
+  end
+
+  test "associated offers should be destroyed" do
+    @user.save
+    @location.save
+    @user.create_offer(location_id: @location.id, postal_code: "V2Y3B4")
+    assert_difference 'Offer.count', -1 do
+      @user.destroy
+    end
   end
 end
