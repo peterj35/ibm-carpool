@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :logged_in_admin_user,     only: [:manage, :new, :destroy]
+  before_action :logged_in_admin_user,     only: [:manage, :new, :edit, :update, :destroy]
   
   def index
     @locations = Location.all
@@ -58,7 +58,12 @@ class LocationsController < ApplicationController
 
     # Confirms a logged in, admin user.
     def logged_in_admin_user
-      redirect_to(root_url) unless logged_in?
-      redirect_to(root_url) unless current_user.admin?
-    end
+			if !logged_in?
+				flash[:danger] = "Please log in."
+				redirect_to(root_url)
+			else
+				flash[:danger] = "No access"
+      	redirect_to(root_url) unless current_user.admin?
+    	end
+		end
 end
