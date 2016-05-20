@@ -13,6 +13,9 @@ User.create!(name:  "Nonadmin Example",
              activated: true,
              activated_at: Time.zone.now)
 
+Location.create!(name:		"8200 Warden",
+								 region:	"Toronto")
+
 99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@ca.ibm.com"
@@ -23,4 +26,13 @@ User.create!(name:  "Nonadmin Example",
                password_confirmation: password,
 							 activated: true,
 							 activated_at: Time.zone.now)
+end
+
+users = User.order(:created_at).take(40)
+location = Location.order(:created_at).take(1)
+1.times do
+	postal_code = "L6G3C5"
+	location_id = 1
+	brief = Faker::Lorem.sentence(5)
+	users.each { |user| user.create_offer!(postal_code: postal_code, location_id: location_id, brief: brief) }
 end

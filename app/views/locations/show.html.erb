@@ -1,3 +1,15 @@
-<h1>
-	<small>Carpools for</small> <br> <%= @location.name %>
-</h1>
+<% provide(:title, @location.name) %>
+<div class="row">
+	<h1>
+		<small>Carpools for</small> <br> <%= @location.name %>
+	</h1>
+	<div class="col-md-8">
+		<% if @location.offers.any? %>
+		<h3>Offers (<%= @location.offers.count %>)</h3>
+		<ol class="offers">
+			<%= render @offers %>
+		</ol>
+		<%= will_paginate @offers %>
+		<% end %>
+	</div>
+</div>

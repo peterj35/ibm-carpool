@@ -1,0 +1,11 @@
+<li id="offer-<%= offer.id %>">
+	<%= link_to gravatar_for(offer.user, size: 50), offer.user %>
+	<span class="user">
+		Posted by <%= link_to offer.user.name, offer.user %>
+	</span>
+	<span class="postal-code"><%= offer.postal_code %></span>
+	<span class="brief"><%= offer.brief %></span>
+	<span class="timestamp">
+		Updated <%= time_ago_in_words(offer.updated_at) %> ago.
+	</span>
+</li>

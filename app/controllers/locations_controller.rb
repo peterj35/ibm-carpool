@@ -7,6 +7,8 @@ class LocationsController < ApplicationController
 
   def show
   	@location = Location.find(params[:id])
+		@user = User.find(params[:id])
+		@offers = @location.offers.paginate(page: params[:page])
   end
 
   def new
