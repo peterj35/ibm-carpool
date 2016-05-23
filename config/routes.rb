@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   get     'manage_locations'  =>  'locations#manage'
   resources :users
   resources :locations
+  resources :offers
 	resources :account_activations, only: [:edit]
 	resources	:password_resets,			only: [:new, :create, :edit, :update]
-	resources :offers,							only: [:new, :create, :edit, :destroy]
 
   # get 'locations/new'
 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :correct_user,   only: [:new, :edit, :update]
   before_action :admin_user,     only: [:index, :destroy]
   
   def index
@@ -15,6 +15,10 @@ class UsersController < ApplicationController
   end
 
   def new
+    if @user.offer.present?
+      flash[:info] = "You already have an offer. You can edit or update your existing offer."
+      redirect_to user_url
+    end
     @user = User.new
   end
 

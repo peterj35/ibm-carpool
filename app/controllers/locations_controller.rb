@@ -55,5 +55,15 @@ class LocationsController < ApplicationController
   	def location_params
   		params.require(:location).permit(:name)
   	end
+  
+    # Confirms a logged in, admin user.
+    def logged_in_admin_user
+      if !logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to(root_url)
+      else
+        redirect_to(root_url) unless current_user.admin?
+      end
+    end
 
 end
