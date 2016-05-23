@@ -9,7 +9,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-		@offer = Offer.find(params[:id])
+    if @user.offer.present?
+		  @offer = Offer.where(:user_id => User.find(params[:id]))
+    end
   end
 
   def new
@@ -56,11 +58,6 @@ class UsersController < ApplicationController
 
     # Before filters
 
-    # Confirms the correct user.
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
 
     # Confirms an admin user.
     def admin_user

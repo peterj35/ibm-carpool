@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   get     'login'             =>  'sessions#new'
   post    'login'             =>  'sessions#create'
   delete  'logout'            =>  'sessions#destroy'
-  get     'add_location'      =>  'locations#new'
+  #get     'add_location'      =>  'locations#new' -> use locations/new instead
   get     'manage_locations'  =>  'locations#manage'
   resources :users
   resources :locations
 	resources :account_activations, only: [:edit]
 	resources	:password_resets,			only: [:new, :create, :edit, :update]
-	resources :offers,							only: [:create, :edit, :destroy]
+	resources :offers,							only: [:new, :create, :edit, :destroy]
 
   # get 'locations/new'
 

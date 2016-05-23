@@ -31,8 +31,9 @@ end
 users = User.order(:created_at).take(40)
 location = Location.order(:created_at).take(1)
 1.times do
+  title = Faker::Lorem.sentence(4)
 	postal_code = "L6G3C5"
 	location_id = 1
 	brief = Faker::Lorem.sentence(5)
-	users.each { |user| user.create_offer!(postal_code: postal_code, location_id: location_id, brief: brief) }
+	users.each { |user| user.create_offer!(title: title, postal_code: postal_code, location_id: location_id, brief: brief) }
 end

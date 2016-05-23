@@ -5,11 +5,16 @@ class OfferTest < ActiveSupport::TestCase
 	def setup
 		@user = users(:peter)
 		@location = locations(:warden)
-		@offer = @user.create_offer!(location_id: @location.id, postal_code: "V2Y3B4", user_id: @user.id)
+		@offer = @user.create_offer!(title: "foobar", location_id: @location.id, postal_code: "V2Y3B4", user_id: @user.id)
 	end
 
 	test "should be valid" do
     assert @offer.valid?
+  end
+
+  test "title should be present" do
+    @offer.title = nil
+    assert_not @offer.valid?
   end
 
   test "user id should be present" do

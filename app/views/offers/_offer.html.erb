@@ -8,4 +8,9 @@
 	<span class="timestamp">
 		Updated <%= time_ago_in_words(offer.updated_at) %> ago.
 	</span>
+	  <% if current_user!=nil && current_user.admin? %>
+    | <%= link_to "delete", offer, method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+		| <%= link_to "edit", edit_offer_path(offer.id) %>
+  <% end %>
 </li>
