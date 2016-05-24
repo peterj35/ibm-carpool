@@ -7,8 +7,8 @@ module OffersHelper
 
   # Returns the user corresponding to the remember token cookie.
   def offer_owner
-    if (user_id = session[:user_id])
-      @offer_owner ||= User.find_by(id: user_id)
+    if (@offer = current_user.offer)
+      @offer_owner ||= current_user
     end
   end
 

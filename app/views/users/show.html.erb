@@ -10,7 +10,7 @@
 				<br>
 				<% if current_user?(@user) %>
 					<% if @user.offer.present? %>
-						<%= link_to "Edit Offer", edit_offer_path %>
+						<%= link_to "Edit Offer", edit_offer_path(@offer.ids) %>
 					<% else %>
 						<%= link_to "Create Offer", new_offer_path %>
 					<% end %>

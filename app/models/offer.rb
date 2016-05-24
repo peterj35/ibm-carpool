@@ -5,7 +5,16 @@ class Offer < ActiveRecord::Base
   validates :title, presence: true
   validates :user_id, presence: true
   validates :location_id, presence: true
-  VALID_CANADIAN_POSTAL_CODE_REGEX = /\A[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1}[ -]?\d{1}[A-Z]{1}\d{1}\z/
+  VALID_CANADIAN_POSTAL_CODE_REGEX = /\A[ABCEGHJKLMNPRSTVXYabcdefghjklmnprstvxy]{1}\d{1}[a-zA-Z]{1}[ -]?\d{1}[a-zA-Z]{1}\d{1}\z/
   validates :postal_code, presence: true, format: { with: VALID_CANADIAN_POSTAL_CODE_REGEX }
   validates :brief, length: { maximum: 200 }
+  before_save :clean_postal
+
+  def clean_postal
+  	if postal_code.length == 6
+  		# TODO: this doesn't clean properly for some reason...
+  		self.postal_code.gsub(/(.{3})/, '\1 ')
+  	end
+  	self.postal_code.upcase!
+  end
 end
