@@ -37,8 +37,8 @@ class OfferTest < ActiveSupport::TestCase
   	assert_not @offer.valid?
   end
 
-  test "brief should be at most 200 characters" do
-  	@offer.brief = "a" * 201
+  test "brief should be at most 600 characters" do
+  	@offer.brief = "a" * 601
   	assert_not @offer.valid?
   end
 

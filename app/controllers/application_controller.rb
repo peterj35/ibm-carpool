@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 	def logged_in_user
 		unless logged_in?
 			store_location
-			flash[:danger] = "Please log in."
+			flash[:warning] = "Please sign up or log in. You must have an account to offer a ride!"
 			redirect_to login_url
 		end
 	end

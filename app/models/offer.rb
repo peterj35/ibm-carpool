@@ -7,7 +7,7 @@ class Offer < ActiveRecord::Base
   validates :location_id, presence: true
   VALID_CANADIAN_POSTAL_CODE_REGEX = /\A[ABCEGHJKLMNPRSTVXYabcdefghjklmnprstvxy]{1}\d{1}[a-zA-Z]{1}[ -]?\d{1}[a-zA-Z]{1}\d{1}\z/
   validates :postal_code, presence: true, format: { with: VALID_CANADIAN_POSTAL_CODE_REGEX }
-  validates :brief, length: { maximum: 200 }
+  validates :brief, length: { maximum: 600 }
   before_save :clean_postal
 
   def clean_postal

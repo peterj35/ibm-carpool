@@ -7,14 +7,6 @@
         <%= @user.name %>
 				<br>
 				<%= @user.email %>
-				<br>
-				<% if current_user?(@user) %>
-					<% if @user.offer.present? %>
-						<%= link_to "Edit Offer", edit_offer_path(@offer.ids) %>
-					<% else %>
-						<%= link_to "Create Offer", new_offer_path %>
-					<% end %>
-				<% end %>
       </h1>
     </section>
   </aside>
@@ -24,6 +16,15 @@
 			<ol class="offers">
 				<%= render @offer %>
 			</ol>
+			<% if current_user?(@user) %>
+				<%= link_to "Edit Offer", edit_offer_path(@offer.ids), class: "btn btn-lg btn-success btn-block" %>
+			<% end %>
+		<% end %>
+		<% if !@user.offer.present? %>
+			<h3>No Offers yet!</h3>
+			<% if current_user?(@user) %>
+				<%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
+			<% end %>
 		<% end %>
 	</div>
 </div>
