@@ -1,7 +1,7 @@
 <li id="offer-<%= offer.id %>">
 	<%= link_to gravatar_for(offer.user, size: 50), offer.user %>
 	<span class="title">
-		<%= link_to offer.title, offer.user %>
+		<%= link_to offer.title, offer.user %> (<%= offer.specific_location %>)
 	</span>
 	<br>
 	<span class="user">
