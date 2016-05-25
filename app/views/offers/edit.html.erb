@@ -8,29 +8,23 @@
       <%= render 'shared/offer_error_messages' %>
 
       <%= f.label :title %> <span style="color:red;">*</span>
-      <%= f.text_field :title, class: 'form-control' %>
+      <%= f.text_field :title, id: 'offer_title', class: 'form-control', type: "text", title: 'Offer Title', data: { toggle: "popover", trigger: "active", content: "Please provide the major intersections of where you live (start your commute), and the major regions (eg. Downtown Toronto, Brampton).", placement: "top" } %>
 
       <%= f.label :work_location %> <span style="color:red;">*</span>
       <%= f.collection_select(:location_id, Location.all, :id, :name, { :prompt=> 'Select your location', :selected => @offer.location_id }, { class: 'form-control' }) %>
 
       <%= f.label :home_postal_code %> <span style="color:red;">*</span>
-      <%= f.text_field :postal_code, class: 'form-control' %>
-
-      <%= f.label :work_start %>
-      <%= f.time_field :work_start, class: 'form-control' %>
-
-      <%= f.label :work_end %>
-      <%= f.time_field :work_end, class: 'form-control' %>
+      <%= f.text_field :postal_code, id: 'offer_postal', class: 'form-control', type: "text", title: 'Postal Code', data: { toggle: "popover", trigger: "active", content: "Potential riders can see this as part of your posting, and can determine if their desired pickup location may be on the way of your commute, or if they live nearby.", placement: "top" } %>
 
       <%= f.label :flexible_hours? %>
       <%= f.check_box :flexible, class: '' %>
 
       <%= f.label :brief_description_of_offer %>
-      <%= f.text_area :brief, class: 'form-control' %>
+      <%= f.text_area :brief, id: 'offer_brief', class: 'form-control', type: "text", title: 'Brief Description', data: { toggle: "popover", trigger: "active", content: "Provide any further details of your carpool and working schedule, such as days of the week you go into work, which hours you typically work, or how much you are looking for riders to pay.", placement: "top" } %>
 
       <span style="color:red;">*</span> = required field
 
-      <%= f.submit "Edit Offer", class: "btn btn-primary" %>
+      <%= f.submit "Edit Offer", class: "btn btn-success" %>
     <% end %>
   </div>
 </div>

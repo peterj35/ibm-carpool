@@ -53,7 +53,7 @@ class LocationsController < ApplicationController
   private
 
   	def location_params
-  		params.require(:location).permit(:name)
+  		params.require(:location).permit(:name, :image_name, :description)
   	end
   
     # Confirms a logged in, admin user.

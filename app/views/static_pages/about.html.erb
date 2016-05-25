@@ -2,13 +2,50 @@
 
 <h1>About</h1>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">What's the Carpool Buddy?</h3>
-  </div>
-  <div class="panel-body">
-    <p>
-      It's an app developed by the Future Blue Web Team to help IBMers find a carpool for their daily commutes.
-    </p>
-  </div>
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h2 class="panel-title">Offering a Carpool</h2>
+		  </div>
+		  <div class="panel-body">
+		    <p>
+		      If you drive to work and are looking for riders for your commute, you can <%= link_to "offer a ride", new_offer_path %>. In order to offer a ride, you will need to register using your IBM email, which will be how potential riders will contact you if they are interested in your offer.
+		    </p>
+		    <p>
+		    	When you submit your offer, it will be viewable to all IBMers looking for a carpool partner using the Carpool Buddy. All you need to do now is wait for potential riders to either ping your or email you!
+		    </p>
+		  </div>
+		</div>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h2 class="panel-title">Finding a Carpool</h2>
+		  </div>
+		  <div class="panel-body">
+		    <p>
+		      If you are looking for a carpool for your commute, you can <%= link_to "find a ride", locations_path %>. You should look for a carpool partner by looking for a nearby zip code or nearest intersection to where you live. Alternatively, if you are able to find an offer where your home may be on their way to their work, you could contact them too to verify their commute route.
+		    </p>
+		    <p>
+		    	To use zip codes to identify towns or locations, you can search the offerer's zip code on a service like <%= link_to "Google Maps", "https://www.google.ca/maps" %>.
+		    </p>
+		  </div>
+		</div>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h2 class="panel-title">Driver &amp; Rider Tips to Solidify a Carpool</h2>
+		  </div>
+		  <div class="panel-body">
+		    <p>
+		      Once you have found a candidates or multiple candidates for your carpool, you will need to contact them with their IBM email and determine if starting or joining that carpool is feasible. If you are nervous about contacting an 'unknown' person about carpooling, keep in mind that, like you, they are interested in carpooling and have expressed a willingness to try an alternative to single occupancy commuting.
+		    </p>
+		    <p>
+		    	You will probably want to arrange a meeting with the candidate while at work, to see if you are compatible. Plan a route, and discuss basic carpool arrangements like <strong>meeting times, pickup locations, and commuting costs</strong>. Forming a carpool is the responsibility of the individuals wanting to participate in the carpool. Each carpool is different and is custom tailored to the individuals of your specific group.
+		    </p>
+		    <p>
+		    	Give your carpool a month or two to get going - it usually takes a while to work out the 'bugs' and create a successful carpool. If, despite your best efforts, it is not working -  try again with another carpool.
+		    </p>
+		  </div>
+		</div>
+	</div>
 </div>
+

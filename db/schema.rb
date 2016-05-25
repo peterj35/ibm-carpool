@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523194126) do
+ActiveRecord::Schema.define(version: 20160525213941) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "picture_url"
+    t.string   "image_name"
     t.string   "region"
+    t.text     "description"
   end
 
   add_index "locations", ["name"], name: "index_locations_on_name", unique: true
@@ -26,14 +27,13 @@ ActiveRecord::Schema.define(version: 20160523194126) do
   create_table "offers", force: :cascade do |t|
     t.text     "brief"
     t.integer  "user_id"
-    t.time     "work_start"
-    t.time     "work_end"
     t.boolean  "flexible"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "location_id"
     t.string   "postal_code"
     t.text     "title"
+    t.text     "specific_location"
   end
 
   add_index "offers", ["location_id"], name: "index_offers_on_location_id"
