@@ -17,6 +17,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 section {
@@ -68,7 +69,7 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.5em;
   color: #555;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -198,6 +199,12 @@ input {
   }
 }
 
+/* Popovers */
+
+.popover{
+  width:350px;
+}
+
 
 /* Locations index */
 
@@ -222,6 +229,7 @@ input {
 .offers {
 	list-style: none;
 	padding: 0;
+  font-family: 'Neuton', serif;
 	li {
 		padding: 10px 0;
 		border-top: 1px solid #e8e8e8;
@@ -241,6 +249,10 @@ input {
 		margin-left: 60px;
     color: $brand-danger;
 	}
+  .flexible-hours {
+    display: block;
+    margin-left: 60px;
+  }
 	.brief {
 		display: block;
 		margin-left: 60px;

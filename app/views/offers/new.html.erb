@@ -10,7 +10,7 @@
       <%= hidden_field_tag :id, @offer.user_id %>
 
       <%= f.label :title %> <span style="color:red;">*</span>
-      <%= f.text_field :title, class: 'form-control' %>
+      <%= f.text_field :title, id: 'offer_title', class: 'form-control', type: "text", title: 'Offer Title', data: { toggle: "popover", trigger: "active", content: "Please provide the major intersections of where you live (start your commute), and the major regions (eg. Downtown Toronto, Brampton).", placement: "bottom" } %>
 
       <%= f.label :work_location %> <span style="color:red;">*</span>
       <%= f.collection_select(:location_id, Location.all, :id, :name, { :prompt=> 'Select your location', :selected => @offer.location_id }, { class: 'form-control' }) %>
