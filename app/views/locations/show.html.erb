@@ -20,9 +20,10 @@
 	<div class="col-md-4">
 		<hr>
 		<h2>About this location</h2>
+		<%= image_tag(@location.image_name, :alt => @location.image_name, :class => "img-responsive") %>
 		<h3><%= @location.name %></h3>
 		<p>
-			
+			<%= @location.description %>
 		</p>
 	</div>
 </div>
