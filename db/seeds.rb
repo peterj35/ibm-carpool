@@ -23,6 +23,17 @@ Location.create!(name:		"8200 Warden",
                   lab was relocated to Markham from a building in Toronto on September 11, 2001.",
 								 region:	"Toronto")
 
+Location.create!(name:    "3600 Steeles",
+                 image_name: "3600.jpeg",
+                 description: "IBM Canada's head offices are currently located in Markham, Ontario and have 
+                 been there since the early 1980s. The current building IBM occupies is located at 3600 Steeles 
+                 Avenue East and was completed in 1995. IBM Canada's previous head office was located across 
+                 the street at 3500 Steeles Avenue East (now Liberty Centre, Markham). The building rises from 
+                 four floors on the west to seven floors at the east side. There is an underground ramp that is 
+                 accessible from the left-most lane on east-bound Steeles Avenue that provides access to the 
+                 building's parking area at the rear.",
+                 region:  "Toronto")
+
 99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@ca.ibm.com"
