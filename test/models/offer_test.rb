@@ -17,6 +17,11 @@ class OfferTest < ActiveSupport::TestCase
     assert_not @offer.valid?
   end
 
+  test "title should be at most 140 chars" do
+    @offer.title = "a" * 141
+    assert_not @offer.valid?
+  end
+
   test "user id should be present" do
   	@offer.user_id = nil
   	assert_not @offer.valid?
