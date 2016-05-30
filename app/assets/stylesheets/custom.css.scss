@@ -60,9 +60,23 @@ h2 {
   color: #777;
 }
 
+h4.panel-title {
+  font-size: 2em;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+.panel-body{
+  ol {
+    li {
+      margin: 0 0 10px 0;
+      font-size: 1.1em;
+    }
+}
+
 }
 
 /* header */
@@ -99,9 +113,10 @@ footer {
   border-top: 1px solid #eaeaea;
   color: #777;
   a {
-    color: #555;
+    text-decoration: none !important; 
+    color: #000;
     &:hover {
-      color: #222;
+      color: #333;
     }
   }
   small {
@@ -248,6 +263,10 @@ input {
     a {
       text-decoration: none;
     }
+  }
+  .specific-location {
+    color: #555;
+    font-size: 1.3em;
   }
 	.user {
 		margin-top: 5em;
