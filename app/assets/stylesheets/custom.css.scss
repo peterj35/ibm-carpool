@@ -1,3 +1,4 @@
+@import "accessible";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -70,7 +71,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.5em;
-  color: #555;
+  color: #152935;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -78,8 +79,16 @@ p {
 }
 
 #logo:hover {
-  color: #999;
+  color: #1d3649;
   text-decoration: none;
+}
+
+.navbar-default .navbar-nav li a{
+  color: #012B22;
+}
+
+.navbar-default .navbar-nav li a:hover{
+  color: #006D5D;
 }
 
 /* footer */
@@ -247,7 +256,7 @@ input {
 	.postal-code {
 		display: block;
 		margin-left: 60px;
-    color: $brand-danger;
+    color: #E00000;
 	}
   .flexible-hours {
     display: block;
@@ -262,4 +271,7 @@ input {
 		display: block;
 		margin-left: 60px;
 	}
+  .btn {
+    font-family: 'Montserrat', sans-serif;
+  }
 }

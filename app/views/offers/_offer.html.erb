@@ -10,9 +10,9 @@
 	<span class="postal-code"><%= offer.postal_code %></span>
 	<span class="flexible-hours">
 		<% if offer.flexible %>
-			<span style="color:green;">Flexible work hours!</span>
+			<span style="color:#008000;">Flexible work hours!</span>
 		<% else %>
-			<span style="color:orange;">Inflexible work hours</span>
+			<span style="color:#9F6B3F;">Inflexible work hours</span>
 		<% end %>
 	</span>
 	<% if !current_page?(url_for(:controller => 'locations', :action => 'show')) %>
@@ -21,10 +21,14 @@
 	<span class="timestamp" title="Created <%= time_ago_in_words(offer.created_at) %> ago.">
 		Updated <%= time_ago_in_words(offer.updated_at) %> ago.
 	</span>
-	  <% if current_user?(offer.user) %>
-    | <%= link_to "delete", offer, method: :delete,
-                                  data: { confirm: 
-                    "Are you sure you want to delete your offer? This cannot be undone." } %>
-		| <%= link_to "edit", edit_offer_path(offer.id) %>
-  <% end %>
+	 	<% if current_user?(offer.user) && current_page?(url_for(:controller => 'locations', :action => 'show')) %>
+			<%= link_to "Edit Offer", edit_offer_path(offer.id), class: "btn btn-sm btn-success" %>
+			<%= link_to "Delete Offer", offer, method: :delete, data: { confirm: 
+		        "Are you sure you want to delete your offer? This cannot be undone." }, class: "btn btn-sm btn-danger" %>
+		<% elsif current_user?(offer.user) && !current_page?(url_for(:controller => 'locations', :action => 'show')) %>
+			<hr>
+			<%= link_to "Edit Offer", edit_offer_path(offer.id), class: "btn btn-lg btn-success btn-block" %>
+			<%= link_to "Delete Offer", offer, method: :delete, data: { confirm: 
+		        "Are you sure you want to delete your offer? This cannot be undone." }, class: "btn btn-lg btn-danger btn-block" %>
+  		<% end %>
 </li>
