@@ -4,32 +4,6 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3" role="form">
-    <%= form_for(@offer) do |f| %>
-      <%= render 'shared/offer_error_messages' %>
-
-      <%= hidden_field_tag :id, @offer.user_id %>
-
-      <%= f.label :title %> <span style="color:red;">*</span>
-      <%= f.text_field :title, id: 'offer_title', class: 'form-control', type: "text", title: 'Offer Title', data: { toggle: "popover", trigger: "active", content: "Please provide the most important details of your carpool (such as major intersections of where you start your commute).", placement: "top" } %>
-
-      <%= f.label :specific_location %> <span style="color:red;">*</span>
-      <%= f.text_field :specific_location, id: 'offer_specific_location', class: 'form-control', type: "text", title: 'Specific Location', data: { toggle: "popover", trigger: "active", content: "Provide the name of your major region (eg. Downtown Toronto, Brampton, Scarborough).", placement: "top" } %>
-
-      <%= f.label :work_location %> <span style="color:red;">*</span>
-      <%= f.collection_select(:location_id, Location.all, :id, :name, { :prompt=> 'Select your location', :selected => @offer.location_id }, { class: 'form-control' }) %>
-
-      <%= f.label :home_postal_code %> <span style="color:red;">*</span>
-      <%= f.text_field :postal_code, id: 'offer_postal', class: 'form-control', type: "text", title: 'Postal Code', data: { toggle: "popover", trigger: "active", content: "Potential riders can see this as part of your posting, and can determine if their desired pickup location may be on the way of your commute, or if they live nearby.", placement: "top" } %>
-
-      <%= f.label :flexible_hours? %>
-      <%= f.check_box :flexible, class: '' %>
-
-      <%= f.label :brief_description_of_offer %> 
-      <%= f.text_area :brief, id: 'offer_brief', class: 'form-control', type: "text", title: 'Brief Description', data: { toggle: "popover", trigger: "active", content: "Provide any further details of your carpool and working schedule, such as days of the week you go into work, which hours you typically work, or how much you are looking for riders to compensate.", placement: "top" } %>
-
-      <span style="color:red;">*</span> = required field
-
-      <%= f.submit "Create Offer", class: "btn btn-primary" %>
-    <% end %>
+    <%= render 'offer_form' %>
   </div>
 </div>
