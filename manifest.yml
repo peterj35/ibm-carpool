@@ -11,4 +11,4 @@ applications:
   #cf cs elephantsql turtle yourownname
   #cf cs rediscloud 25mb yourownname
   #redis cloud has different plans, check out cf marketplace for the plans
-    - "SQL Database-100mb
+    - mysqldb
