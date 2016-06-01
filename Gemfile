@@ -31,7 +31,7 @@ group :test do
 end
 
 group :production do
-  gem 'mysql', '~> 2.9.1'
-#  gem 'pg',                     '0.17.1'
+#  gem 'mysql', '~> 2.9.1'
+   gem 'pg',                     '0.17.1'
   gem 'rails_12factor',         '0.0.2'
 end
