@@ -1,0 +1,17 @@
+# docker-compose.yml
+db:
+  extends:
+    file: common.yml
+    service: postgres
+web:
+  environment:
+    RAILS_ENV: development
+    DATABASE_HOST: db
+    DATABASE_PASSWORD: carpool_pass
+  extends:
+    file: common.yml
+    service: web
+#  volumes:
+#    - .:/ibm-carpool
+  links:
+    - db
