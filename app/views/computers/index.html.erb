@@ -1,0 +1,5 @@
+<h3>ALL COMPUTERS</h3>
+<% @computers.each do |computer| %>
+	<p><%= computer.user.name %> owns <%= computer.brand %> <%= computer.year %></p>
+<% end %>
+
