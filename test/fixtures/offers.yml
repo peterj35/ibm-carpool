@@ -3,8 +3,6 @@
 one:
   brief: MyText
   user_id: 1
-  work_start: 2016-05-19 23:45:11
-  work_end: 2016-05-19 23:45:11
   flexible: false
   created_at: <%= 3.years.ago %>
   updated_at: <%= 2.years.ago %>
@@ -12,8 +10,6 @@ one:
 two:
   brief: MyText
   user_id: 1
-  work_start: 2016-05-19 23:45:11
-  work_end: 2016-05-19 23:45:11
   flexible: false
   created_at: <%= 3.hours.ago %>
   updated_at: <%= 2.hours.ago %>
@@ -21,8 +17,6 @@ two:
 most_recent:
   brief: "I am always first"
   user_id: 1
-  work_start: 2016-05-19 23:45:11
-  work_end: 2016-05-19 23:45:11
   flexible: false
   created_at: <%= Time.zone.now %>
   updated_at: <%= Time.zone.now %>

@@ -16,9 +16,6 @@
 			<ol class="offers">
 				<%= render @offer %>
 			</ol>
-			<% if current_user?(@user) %>
-				<%= link_to "Edit Offer", edit_offer_path(@offer.ids), class: "btn btn-lg btn-success btn-block" %>
-			<% end %>
 		<% end %>
 		<% if !@user.offer.present? %>
 			<h3>No Offers yet!</h3>

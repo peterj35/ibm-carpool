@@ -1,59 +1,64 @@
 <div class="center jumbotron">
   <h1>Carpool Buddy</h1>
-
+  <hr>
   <h2>
   	Share a ride, slow Global Warming, meet new friends!
+  	<div class="top-buffer"></div>
+  	<%= link_to "Check out the benefits", benefits_path, class: "btn btn-lg btn-success" %>
   </h2>
-
-  <%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-success" %>
-  <%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-info" %>
 </div>
 
-
 <div class="row top-buffer">
-	<div class="col-sm-12 col-md-offset-2 col-md-8">
-		<h1><i class="fa fa-car fa-2x"></i></h1>
-		<h1>Share a ride!</h1>
-		<p class="lead">
-			Save money on the gas bill by taking the money of your coworkers that would've gone to public transit!
-		</p>
-		<p class="lead">
-			Riders save the time, drivers save the money!
-		</p>
+	<div class="col-xs-6">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="panel-title text-center">
+					<i class="fa fa-car fa-2x"></i>
+					<hr>
+					Drive to work?
+				</h4>
+			</div>
+			<div class="panel-body">
+				<ol>
+					<li>Post your drive to work</li>
+					<li>Find commuters who may be willing to pay you for transportation</li>
+					<li>Or find other drivers who live near your location that may be willing to alternate on driving days</li>
+					<li>Either way, save on transportation costs!</li>
+				</ol>
+				<div class="top-buffer">
+  					<%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
+  				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="background-color: #1A6A82;">
+				<h4 class="panel-title text-center">
+					<i class="fa fa-bus fa-2x"></i>
+					<hr>
+					Take public transit?
+				</h4>
+			</div>
+			<div class="panel-body">
+				<ol>
+					<li>Find a potential carpool partner based on location and schedules</li>
+					<li>Reach out to them by their email, or on Sametime</li>
+					<li>Meet with them in person to plan out meeting times, pickup locations, and reimbursement</li>
+					<li>Save on transportation time and costs!</li>
+				</ol>
+				<div class="top-buffer">
+  					<%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-info btn-block" %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row top-buffer">
+	<div class="col-xs-12 col-md-offset-2 col-md-8 text-center">
+  		<%= link_to "Find out more", about_path, class: "btn btn-warning" %>
 	</div>
 </div>
 
 <div class="row top-buffer">
-	<div class="col-sm-12 col-md-offset-2 col-md-8">
-		<h1><i class="fa fa-globe fa-2x"></i></h1>
-		<h1>Slow Global Warming!</h1>
-		<p class="lead">
-			When fossil fuels like petrol or diesel are burned, they give off carbon dioxide - the main climate change gas! 
-		</p>
-	</div>
-</div>
-
-<div class="row top-buffer">
-	<div class="col-sm-12 col-md-offset-2 col-md-8">
-		<h1><i class="fa fa-hand-peace-o fa-2x"></i></h1>
-		<h1>Meet new Friends!</h1>
-		<p class="lead">
-			Through the IBM-internal Carpool Buddy, find a carpool buddy that you know you can trust.
-		</p>
-	</div>
-</div>
-
-<div class="row top-buffer">
-	<div class="col-sm-12 col-md-offset-2 col-md-8">
-		<p class="lead text-center">
-			What are you waiting for? Start carpooling now!
-		</p>
-	</div>
-</div>
-
-<div class="row top-buffer">
-	<div class="col-sm-12 col-md-offset-2 col-md-8">
-  	<%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-success btn-block" %>
-  	<%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-info btn-block" %>
-	</div>
 </div>

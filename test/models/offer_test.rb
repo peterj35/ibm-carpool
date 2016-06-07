@@ -5,7 +5,7 @@ class OfferTest < ActiveSupport::TestCase
 	def setup
 		@user = users(:peter)
 		@location = locations(:warden)
-		@offer = @user.create_offer!(title: "foobar", location_id: @location.id, postal_code: "V2Y3B4", user_id: @user.id)
+		@offer = @user.create_offer!(title: "foobar", specific_location: "GTA", location_id: @location.id, postal_code: "V2Y3B4", user_id: @user.id)
 	end
 
 	test "should be valid" do
@@ -14,6 +14,11 @@ class OfferTest < ActiveSupport::TestCase
 
   test "title should be present" do
     @offer.title = nil
+    assert_not @offer.valid?
+  end
+
+  test "title should be at most 140 chars" do
+    @offer.title = "a" * 141
     assert_not @offer.valid?
   end
 
@@ -40,6 +45,16 @@ class OfferTest < ActiveSupport::TestCase
   test "brief should be at most 600 characters" do
   	@offer.brief = "a" * 601
   	assert_not @offer.valid?
+  end
+
+  test "specific location should be present" do
+    @offer.specific_location = nil
+    assert_not @offer.valid?
+  end
+
+  test "specific location should be at most 30 characters" do
+    @offer.specific_location = "a" * 31
+    assert_not @offer.valid?
   end
 
   # FAILING due to "associated offers should be destroyed" testcase in user_test.rb
