@@ -1,14 +1,14 @@
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
 
-<p class="lead text-center">
+<p class="text-center">
   Users need to be registered to offer carpools.
   <br>
-  You don't need an account to find rides!
+  You don't need an account to just find rides!
 </p>
 
 <div class="row top-buffer">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3" role="form">
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email, "IBM Email" %>

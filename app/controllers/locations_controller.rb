@@ -20,7 +20,7 @@ class LocationsController < ApplicationController
   	@location = Location.new(location_params)
   	if @location.save
       flash[:success] = "Location has been added."
-      redirect_to locations_url
+      redirect_to manage_locations_path
   	else
   		render 'new'
   	end
@@ -53,7 +53,7 @@ class LocationsController < ApplicationController
   private
 
   	def location_params
-  		params.require(:location).permit(:name)
+  		params.require(:location).permit(:name, :image_name, :description)
   	end
   
     # Confirms a logged in, admin user.

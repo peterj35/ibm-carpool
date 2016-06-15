@@ -1,3 +1,4 @@
+@import "accessible";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -17,6 +18,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 section {
@@ -55,7 +57,11 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: #555;
+}
+
+h4.panel-title {
+  font-size: 2em;
 }
 
 p {
@@ -63,13 +69,23 @@ p {
   line-height: 1.7em;
 }
 
+.panel-body{
+  ol {
+    li {
+      margin: 0 0 10px 0;
+      font-size: 1.1em;
+    }
+}
+
+}
+
 /* header */
 
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
-  color: #555;
+  font-size: 1.5em;
+  color: #152935;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -77,8 +93,16 @@ p {
 }
 
 #logo:hover {
-  color: #999;
+  color: #1d3649;
   text-decoration: none;
+}
+
+.navbar-default .navbar-nav li a{
+  color: #012B22;
+}
+
+.navbar-default .navbar-nav li a:hover{
+  color: #006D5D;
 }
 
 /* footer */
@@ -87,11 +111,12 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #777;
+  color: #555;
   a {
-    color: #555;
+    text-decoration: none !important; 
+    color: #111;
     &:hover {
-      color: #222;
+      color: #333;
     }
   }
   small {
@@ -198,6 +223,12 @@ input {
   }
 }
 
+/* Popovers */
+
+.popover{
+  width:350px;
+}
+
 
 /* Locations index */
 
@@ -222,6 +253,7 @@ input {
 .offers {
 	list-style: none;
 	padding: 0;
+  font-family: 'Neuton', serif;
 	li {
 		padding: 10px 0;
 		border-top: 1px solid #e8e8e8;
@@ -232,6 +264,10 @@ input {
       text-decoration: none;
     }
   }
+  .specific-location {
+    color: #555;
+    font-size: 1.3em;
+  }
 	.user {
 		margin-top: 5em;
 		padding-top: 0;
@@ -239,8 +275,12 @@ input {
 	.postal-code {
 		display: block;
 		margin-left: 60px;
-    color: $brand-danger;
+    color: #E00000;
 	}
+  .flexible-hours {
+    display: block;
+    margin-left: 60px;
+  }
 	.brief {
 		display: block;
 		margin-left: 60px;
@@ -250,4 +290,7 @@ input {
 		display: block;
 		margin-left: 60px;
 	}
+  .btn {
+    font-family: 'Montserrat', sans-serif;
+  }
 }

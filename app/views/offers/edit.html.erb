@@ -3,34 +3,7 @@
 <h1>Edit Offer</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@offer) do |f| %>
-      <%= render 'shared/offer_error_messages' %>
-
-      <%= f.label :title %> <span style="color:red;">*</span>
-      <%= f.text_field :title, class: 'form-control' %>
-
-      <%= f.label :work_location %> <span style="color:red;">*</span>
-      <%= f.collection_select(:location_id, Location.all, :id, :name, { :prompt=> 'Select your location', :selected => @offer.location_id }, { class: 'form-control' }) %>
-
-      <%= f.label :home_postal_code %> <span style="color:red;">*</span>
-      <%= f.text_field :postal_code, class: 'form-control' %>
-
-      <%= f.label :work_start %>
-      <%= f.time_field :work_start, class: 'form-control' %>
-
-      <%= f.label :work_end %>
-      <%= f.time_field :work_end, class: 'form-control' %>
-
-      <%= f.label :flexible_hours? %>
-      <%= f.check_box :flexible, class: '' %>
-
-      <%= f.label :brief_description_of_offer %>
-      <%= f.text_area :brief, class: 'form-control' %>
-
-      <span style="color:red;">*</span> = required field
-
-      <%= f.submit "Edit Offer", class: "btn btn-primary" %>
-    <% end %>
+  <div class="col-md-6 col-md-offset-3" role="form">
+    <%= render 'offer_form' %>
   </div>
 </div>
