@@ -1,15 +1,98 @@
+require 'openssl'
+require 'ldap'
 class User < ActiveRecord::Base
   has_one :offer, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save		:downcase_email
-	before_create	:create_activation_digest
+	# before_create	:create_activation_digest
   validates :name, presence: true, length: { maximum: 50 }
-  VALID_IBM_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.ibm\.com/i
+  # VALID_IBM_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.ibm\.com/i
   validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: VALID_IBM_EMAIL_REGEX },
+                    # format: { with: VALID_IBM_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  # has_secure_password
+  # validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+
+  # The LDAP server to connect to
+  LDAP_SERVER = 'bluepages.ibm.com'
+  BASE_DN = 'ou=bluepages,o=ibm.com'
+
+  # The attributes to retrieve and return after successful authentication
+  # 'callupname','sn','mail','primaryuserid','uid', 
+  LDAP_ATTRIBUTES = ['sn','mail','givenName']
+
+  def self.ldap_login(params)
+    username = params[:email]
+    password = params[:password]
+
+    begin
+      user_info = intranetlogin(username, password)
+    rescue LDAP::ResultError => e
+      return nil
+    end
+
+    user = User.find_by(email: username.downcase)
+    if user
+      user
+    else
+      User.create(email: username.downcase,
+                  name: get_name(user_info))
+    end
+  end
+
+  def self.get_name(user_info)
+    first_name = user_info["givenName"][0] if user_info["givenName"]
+    last_name = user_info["sn"][0] if user_info["sn"]
+
+    if first_name and last_name
+      "#{first_name} #{last_name}"
+    elsif first_name
+      first_name
+    elsif last_name
+      last_name
+    else
+      "John Doe"
+    end
+  end
+
+
+  # Perform an authentication check.
+  # username = Internet e-mail address
+  # password = IBM Intranet Password
+  # Uses SSL for the entire connection.
+  # Returns a hash of attributes if successful
+  #         nil if unsuccessful
+  # return example:
+  #   {"sn"=>["ibmkanrsa"],
+  #    "mail"=>["ibmkanrsa@ca.ibm.com", "kanrsa@ca.ibm.com"],
+  #    "givenName"=>nil}
+
+  def self.intranetlogin(username, password)
+    # First step is to look up the DN and other attributes
+    ldap = LDAP::SSLConn.new(LDAP_SERVER, 636)
+    dn = ""
+    result = Hash.new
+    succeeded = ldap.search_ext(BASE_DN, LDAP::LDAP_SCOPE_SUBTREE,
+      "(&(objectClass=person)(mail=#{username}))") do |entry|
+      # Got an entry, so store the attributes
+      dn = entry.get_dn
+      # Must copy the entry the hard way, as it's a C object
+      for attr in LDAP_ATTRIBUTES
+        result[attr] = entry[attr]
+      end
+    end
+    if !succeeded or !dn
+      return nil
+    end
+    # Now perform the actual auth check by binding with the dn and password
+    ldap.unbind
+    if ldap.bind(dn, password)
+      return result
+    else
+      return nil
+    end
+  end
+
 
   # Returns the hash digest of the given string.
   def User.digest(string)
