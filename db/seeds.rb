@@ -33,6 +33,7 @@ Location.create!(name:    "3600 Steeles",
                  accessible from the left-most lane on east-bound Steeles Avenue that provides access to the 
                  building's parking area at the rear.",
                  region:  "Toronto")
+exit
 
 99.times do |n|
   name  = Faker::Name.name

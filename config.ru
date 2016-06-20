@@ -7,6 +7,7 @@ if Rails.env.production?
 	map CarpoolApp::Application.config.relative_url_root || "/" do
 		run Rails.application
 	end
+	puts "Asset prefix: #{Rails.application.config.assets.prefix}"
 else 
 	run Rails.application
 end
