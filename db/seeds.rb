@@ -1,4 +1,4 @@
-User.create!(name:  "Peter Ju Admin",
+User.create!(name:  "Peter Ju (Admin)",
              email: "jupeter5@ca.ibm.com",
              admin: true)
 
