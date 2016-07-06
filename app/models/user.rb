@@ -56,12 +56,8 @@ class User < ActiveRecord::Base
     first_name = user_info["givenName"][0] if user_info["givenName"]
     last_name = user_info["sn"][0] if user_info["sn"]
 
-    if first_name and last_name
-      "#{first_name} #{last_name}"
-    elsif first_name
-      first_name
-    elsif last_name
-      last_name
+    if first_name || last_name
+      [first_name, last_name].compact.join(" ")
     else
       "John Doe"
     end
