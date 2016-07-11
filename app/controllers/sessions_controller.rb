@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_back_or user
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      flash.now[:danger] = 'Invalid email/password combination, or cannot connect to Bluepages Server'
       render 'new'
     end
   end

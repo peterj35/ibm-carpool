@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get     'about'             =>  'static_pages#about'
   get     'contact'           =>  'static_pages#contact'
   get     'benefits'          =>  'static_pages#benefits'
+  get     'legal'          =>  'static_pages#legal'
   get     'signup'            =>  'users#new'
   get     'login'             =>  'sessions#new'
   post    'login'             =>  'sessions#create'
