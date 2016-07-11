@@ -1,0 +1,24 @@
+<!-- Modal -->
+<div class="modal fade" id="legalModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center" id="myModalLabel">IBM Carpool Buddy Terms and Conditions</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          Neither the IBM Carpool Buddy or the IBM Corporation assumes any responsibility or liability from any accidents or incidents that may occur as a result of using this carpool matching service.
+        </p>
+        <p>
+          Check out the <%= link_to "Legal", legal_path %> page to view the full terms and conditions.
+        </p>
+        <p>
+          By pressing the button below, you acknowledge that you are offering a carpool at your own risk.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <%= submit_tag "I accept the terms and conditions", :type => "button", :class => "btn btn-primary", "data-dismiss" => "modal" %>
+      </div>
+    </div>
+  </div>
+</div>

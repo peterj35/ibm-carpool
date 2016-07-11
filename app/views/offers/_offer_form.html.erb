@@ -1,31 +1,7 @@
     <%= form_for(@offer) do |f| %>
       <%= render 'shared/offer_error_messages' %>
 
-      <!-- Modal -->
-      <div class="modal fade" id="legalModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">IBM Carpool Buddy Terms and Conditions</h4>
-            </div>
-            <div class="modal-body">
-              <p>
-                Neither the IBM Carpool Buddy or the IBM Corporation assumes any responsibility or liability from any accidents or incidents that may occur as a result of using this carpool matching service.
-              </p>
-              <p>
-                Check out the <%= link_to "Legal", legal_path %> page to view the full terms and conditions.
-              </p>
-              <p>
-                By pressing the button below, you acknowledge that you are offering a carpool at your own risk.
-              </p>
-            </div>
-            <div class="modal-footer">
-              <%= f.submit "I accept the terms and conditions", class: "btn btn-primary" %>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render 'shared/legal_modal' %>
 
       <% if current_page?(url_for(:controller => 'offers', :action => 'new')) %>
         <%= hidden_field_tag :id, @offer.user_id %>
@@ -49,6 +25,11 @@
       <%= f.label :brief_description_of_offer %>
       <%= f.text_area :brief, id: 'offer_brief', class: 'form-control', type: "text", title: 'Brief Description', data: { toggle: "popover", trigger: "active", content: "Provide any further details of your carpool and working schedule, such as days of the week you go into work, which hours you typically work, or how much you are looking for riders to compensate.", placement: "top" } %>
 
-      <span style="color:red;">*</span> = required field
-       
+      <span style="color:red;">*</span> = required field 
+      <% if !current_page?(url_for(:controller => 'offers', :action => 'new')) %>
+        <%= f.submit "Edit Offer", class: "btn btn-success" %>
+      <% else %>
+        <%= f.submit "Create Offer", class: "btn btn-primary" %>
+      <% end %>
+
     <% end %>
