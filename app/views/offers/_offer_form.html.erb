@@ -7,11 +7,11 @@
         <%= hidden_field_tag :id, @offer.user_id %>
       <% end %>
 
-      <%= f.label :title %> <span style="color:red;">*</span>
-      <%= f.text_field :title, id: 'offer_title', class: 'form-control', type: "text", title: 'Offer Title', data: { toggle: "popover", trigger: "active", content: "Please provide the most important details of your carpool (such as major intersections of where you start your commute).", placement: "top" } %>
+      <%= f.label :title, 'Major Intersections' %> <span style="color:red;">*</span>
+      <%= f.text_field :title, id: 'offer_title', class: 'form-control', type: "text", title: 'Major Intersections', data: { toggle: "popover", trigger: "active", content: "Please provide the most important details of your carpool (such as the major intersections of where you start your commute).", placement: "top" } %>
 
-      <%= f.label :specific_location %> <span style="color:red;">*</span>
-      <%= f.text_field :specific_location, id: 'offer_specific_location', class: 'form-control', type: "text", title: 'Specific Location', data: { toggle: "popover", trigger: "active", content: "Provide the name of your major region (eg. Downtown Toronto, Brampton, Scarborough).", placement: "top" } %>
+      <%= f.label :specific_location, 'City' %> <span style="color:red;">*</span>
+      <%= f.text_field :specific_location, id: 'offer_specific_location', class: 'form-control', type: "text", title: 'City', data: { toggle: "popover", trigger: "active", content: "Provide the name of your major region (eg. Downtown Toronto, Brampton, Scarborough).", placement: "top" } %>
 
       <%= f.label :work_location %> <span style="color:red;">*</span>
       <%= f.collection_select(:location_id, Location.all, :id, :name, { :prompt=> 'Select your location', :selected => @offer.location_id }, { class: 'form-control' }) %>
