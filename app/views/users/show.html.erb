@@ -20,7 +20,7 @@
 					If you are interested in this offer, email <%= @user.name %> at <%= mail_to @user.email %>.
 				</p>
 				<p>
-					This user works at <%= link_to "@offer.location.name", @offer.location %>
+					<%= link_to "Back to previous page", :back %>
 				</p>
 				<% end %>
 			</ol>
