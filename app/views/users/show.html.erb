@@ -19,6 +19,9 @@
 				<p>
 					If you are interested in this offer, email <%= @user.name %> at <%= mail_to @user.email %>.
 				</p>
+				<p>
+					This user works at <%= link_to "@offer.location.name", @offer.location %>
+				</p>
 				<% end %>
 			</ol>
 		<% end %>
