@@ -18,4 +18,5 @@ class Offer < ActiveRecord::Base
   	end
   	self.postal_code.upcase!
   end
+
 end
