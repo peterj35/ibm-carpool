@@ -28,13 +28,13 @@
   <span class="timestamp" title="Created <%= time_ago_in_words(offer.created_at) %> ago.">
     Updated <%= time_ago_in_words(offer.updated_at) %> ago.
   </span>
-  <% if (current_user?(offer.user) || current_user.admin?) && current_page?(url_for(:controller => 'locations', :action => 'show')) %>
+  <% if current_user?(offer.user) && current_page?(url_for(:controller => 'locations', :action => 'show')) %>
     <div class="text-right">
       <%= link_to "Edit Offer", edit_offer_path(offer.id), class: "btn btn-sm btn-success" %>
       <%= link_to "Delete Offer", offer, method: :delete, data: { confirm: 
         "Are you sure you want to delete your offer? This cannot be undone." }, class: "btn btn-sm btn-warning" %>
     </div>
-  <% elsif (current_user?(offer.user) || current_user.admin?) && !current_page?(url_for(:controller => 'locations', :action => 'show')) %>
+  <% elsif current_user?(offer.user) && !current_page?(url_for(:controller => 'locations', :action => 'show')) %>
     <hr>
     <%= link_to "Edit Offer", edit_offer_path(offer.id), class: "btn btn-lg btn-success btn-block" %>
     <%= link_to "Delete Offer", offer, method: :delete, data: { confirm: 
