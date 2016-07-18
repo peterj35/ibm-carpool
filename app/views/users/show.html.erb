@@ -5,31 +5,31 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-		<br>
-		<%= mail_to @user.email %>
+    <br>
+    <%= mail_to @user.email %>
       </h1>
     </section>
   </aside>
-	<div class="col-md-8">
-		<% if @user.offer.present? %>
-			<h3>Carpool Offer:</h3>
-			<ol class="offers">
-				<%= render @offer %>
-				<% if !current_user?(@user) %>
-				<p>
-					If you are interested in this offer, email <%= @user.name %> at <%= mail_to @user.email %>.
-				</p>
-				<p>
-					<%= link_to "Back to previous page", :back %>
-				</p>
-				<% end %>
-			</ol>
-		<% end %>
-		<% if !@user.offer.present? %>
-			<h3>No Offers yet!</h3>
-			<% if current_user?(@user) %>
-				<%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
-			<% end %>
-		<% end %>
-	</div>
+  <div class="col-md-8">
+    <% if @user.offer.present? %>
+      <h3>Carpool Offer:</h3>
+      <ol class="offers">
+        <%= render @offer %>
+        <% if !current_user?(@user) %>
+        <p>
+          If you are interested in this offer, email <%= @user.name %> at <%= mail_to @user.email %>.
+        </p>
+        <p>
+          <%= link_to "Back to previous page", :back %>
+        </p>
+        <% end %>
+      </ol>
+    <% end %>
+    <% if !@user.offer.present? %>
+      <h3>No Offers yet!</h3>
+      <% if current_user?(@user) %>
+        <%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
