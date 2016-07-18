@@ -12,11 +12,11 @@ class Offer < ActiveRecord::Base
   before_save :clean_postal
 
   def clean_postal
-  	if postal_code.length == 6
-  		# TODO: this doesn't clean properly for some reason...
-  		self.postal_code.gsub(/(.{3})/, '\1 ')
-  	end
-  	self.postal_code.upcase!
+    if postal_code.length == 6
+      # TODO: this doesn't clean properly for some reason...
+      self.postal_code.gsub(/(.{3})/, '\1 ')
+    end
+    self.postal_code.upcase!
   end
 
 end

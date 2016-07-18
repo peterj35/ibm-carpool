@@ -1,6 +1,6 @@
 module OffersHelper
 
-	# Returns true if the given user is the current user.
+  # Returns true if the given user is the current user.
   def offer_owner?(user)
     user == offer_owner
   end
