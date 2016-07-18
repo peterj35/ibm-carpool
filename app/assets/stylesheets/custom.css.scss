@@ -83,8 +83,7 @@ p {
       margin: 0 0 10px 0;
       font-size: 1.1em;
     }
-}
-
+  }
 }
 
 /* header */
@@ -259,13 +258,13 @@ input {
 /* offers */
 
 .offers {
-	list-style: none;
-	padding: 0;
-  font-family: 'Neuton', serif;
-	li {
-		padding: 10px 0;
-		border-top: 1px solid #e8e8e8;
-	}
+  list-style: none;
+  padding: 0;
+  font-family: 'Times New Roman', 'Neuton', serif;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
   .title {
     font-size: 1.5em;
     a {
@@ -276,28 +275,36 @@ input {
     color: #555;
     font-size: 1.3em;
   }
-	.user {
-		margin-top: 5em;
-		padding-top: 0;
-	}
-	.postal-code {
-		display: block;
-		margin-left: 60px;
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .not-available {
+    background-color: #d3d3d3;
+  }
+  .not-available .user {
+    margin-top: 5em;
+    padding-top: 0;
+    margin-left: 60px;
+  }
+  .postal-code {
+    display: block;
+    margin-left: 60px;
     color: #E00000;
-	}
+  }
   .flexible-hours {
     display: block;
     margin-left: 60px;
   }
-	.brief {
-		display: block;
-		margin-left: 60px;
-	}
-	.timestamp {
-		color: $gray-light;
-		display: block;
-		margin-left: 60px;
-	}
+  .brief {
+    display: block;
+    margin-left: 60px;
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
   .btn {
     font-family: 'Montserrat', sans-serif;
   }

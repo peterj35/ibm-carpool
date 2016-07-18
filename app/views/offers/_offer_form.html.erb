@@ -25,6 +25,14 @@
       <%= f.label :brief_description_of_offer %>
       <%= f.text_area :brief, id: 'offer_brief', class: 'form-control', type: "text", title: 'Brief Description', data: { toggle: "popover", trigger: "active", content: "Provide any further details of your carpool and working schedule, such as days of the week you go into work, which hours you typically work, or how much you are looking for riders to compensate.", placement: "top" } %>
 
+      <%# if !current_page?(url_for(:controller => 'offers', :action => 'new')) %>
+        <%= f.label :carpool_filled? %>
+        <%= f.check_box :matched, class: '' %>
+        <span style="small">This will indicate your carpool has been filled, and move your offer to the bottom of the list. You can also select this option if you just want to list your current carpool for the record.</span>
+        <br>
+        <br>
+      <%# end %>
+
       <span style="color:red;">*</span> = required field 
       <% if !current_page?(url_for(:controller => 'offers', :action => 'new')) %>
         <%= f.submit "Edit Offer", class: "btn btn-success" %>

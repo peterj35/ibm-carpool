@@ -1,37 +1,37 @@
 <% provide(:title, @location.name) %>
 <div class="row">
-	<h1>
-		<small>Carpools for</small> <br> <%= @location.name %>
-	</h1>
-	<div class="col-md-offset-3 col-md-6">
-		<%= link_to "Offer a Carpool", new_offer_path, class: "btn btn-md btn-primary btn-block" %>
-	</div>
+  <h1>
+    <small>Carpools for</small> <br> <%= @location.name %>
+  </h1>
+  <div class="col-md-offset-3 col-md-6">
+    <%= link_to "Offer a Carpool", new_offer_path, class: "btn btn-md btn-primary btn-block" %>
+  </div>
 </div>
 <div class="row text-center">
-	<p>
-		Even if you don't see a suitable carpool for you now, keep checking back often!
-	</p>
-	<p>
-		By using this listing service, you agree to the <%= link_to "terms and conditions", legal_path %>.
-	</p>
+  <p>
+    Even if you don't see a suitable carpool for you now, keep checking back often!
+  </p>
+  <p>
+    By using this listing service, you agree to the <%= link_to "terms and conditions", legal_path %>.
+  </p>
 </div>
 <div class="row">
-	<div class="col-md-8">
-		<% if @location.offers.any? %>
-		<h3>Offers (<%= @location.offers.count %>)</h3>
-		<ol class="offers">
-			<%= render @offers %>
-		</ol>
-		<%= will_paginate @offers %>
-		<% end %>
-	</div>
-	<div class="col-md-4">
-		<h3>&nbsp;</h3>
-		<h2>About this location</h2>
-		<%= image_tag(@location.image_name, :alt => @location.image_name, :class => "img-responsive") %>
-		<h3><%= @location.name %></h3>
-		<p>
-			<%= @location.description %>
-		</p>
-	</div>
+  <div class="col-md-8">
+    <% if @location.offers.any? %>
+      <h3>Offers (<%= @location.offers.count %>)</h3>
+      <ol class="offers">
+        <%= render @offers %>
+      </ol>
+      <%= will_paginate @offers %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <h3>&nbsp;</h3>
+    <h2>About this location</h2>
+    <%= image_tag(@location.image_name, :alt => @location.image_name, :class => "img-responsive") %>
+    <h3><%= @location.name %></h3>
+    <p>
+      <%= @location.description %>
+    </p>
+  </div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525215420) do
+ActiveRecord::Schema.define(version: 20160718122904) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
@@ -28,12 +28,13 @@ ActiveRecord::Schema.define(version: 20160525215420) do
     t.text     "brief"
     t.integer  "user_id"
     t.boolean  "flexible"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "location_id"
     t.string   "postal_code"
     t.text     "title"
     t.text     "specific_location"
+    t.boolean  "matched",           default: false
   end
 
   add_index "offers", ["location_id"], name: "index_offers_on_location_id"
