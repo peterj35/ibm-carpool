@@ -18,11 +18,11 @@
 <div class="row">
   <div class="col-md-8">
     <% if @location.offers.any? %>
-    <h3>Offers (<%= @location.offers.count %>)</h3>
-    <ol class="offers">
-      <%= render @offers %>
-    </ol>
-    <%= will_paginate @offers %>
+      <h3>Offers (<%= @location.offers.count %>)</h3>
+      <ol class="offers">
+        <%= render @offers %>
+      </ol>
+      <%= will_paginate @offers %>
     <% end %>
   </div>
   <div class="col-md-4">

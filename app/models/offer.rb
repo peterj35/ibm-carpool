@@ -1,7 +1,7 @@
 class Offer < ActiveRecord::Base
   belongs_to :user
   belongs_to :location
-  default_scope -> { order(updated_at: :desc) }
+  default_scope -> { order(matched: :asc, updated_at: :desc) }
   validates :title, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
   validates :location_id, presence: true

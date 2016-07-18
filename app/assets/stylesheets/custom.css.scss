@@ -260,7 +260,7 @@ input {
 .offers {
   list-style: none;
   padding: 0;
-  font-family: 'Neuton', serif;
+  font-family: 'Times New Roman', 'Neuton', serif;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -278,6 +278,14 @@ input {
   .user {
     margin-top: 5em;
     padding-top: 0;
+  }
+  .not-available {
+    background-color: #d3d3d3;
+  }
+  .not-available .user {
+    margin-top: 5em;
+    padding-top: 0;
+    margin-left: 60px;
   }
   .postal-code {
     display: block;

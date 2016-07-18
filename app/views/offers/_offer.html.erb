@@ -1,7 +1,14 @@
+<% if offer.matched %>
+<li id="offer-<%= offer.id %>" class="not-available">
+<% else %>
 <li id="offer-<%= offer.id %>">
+<% end %>
   <%= link_to gravatar_for(offer.user, size: 50), offer.user %>
   <span class="title"><%= link_to offer.title, offer.user %> - </span>
   <span class="specific-location">(<%= offer.specific_location %>)</span>
+  <% if offer.matched %>
+    <h4><span class="label label-danger">This carpool has been filled!</span></h4>
+  <% end %>
 
   <br>
   <span class="user">
