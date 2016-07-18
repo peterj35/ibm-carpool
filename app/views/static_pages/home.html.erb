@@ -1,10 +1,14 @@
 <div class="center jumbotron">
+  <%= image_tag("ibm-dark-small.png") %>
   <h1>Carpool Buddy</h1>
   <hr>
   <h2>
   	Share a ride, slow Global Warming, meet new friends!
   	<div class="top-buffer"></div>
-  	<%= link_to "Check out the benefits", benefits_path, class: "btn btn-lg btn-success" %>
+  	<%= link_to "Offer Carpool", new_offer_path, class: "btn btn-lg btn-primary" %>
+  	<%= link_to "View Carpools", locations_path, class: "btn btn-lg btn-info" %>
+  	<br>
+  	<%= link_to "Check out the benefits", benefits_path, class: "btn btn-lg btn-success top-margin" %>
   </h2>
 </div>
 
@@ -21,10 +25,19 @@
 			<div class="panel-body">
 				<ol>
 					<li>Post your drive to work</li>
-					<li>Find commuters who may be willing to pay you for transportation</li>
-					<li>Or find other drivers who live near your location that may be willing to alternate on driving days</li>
-					<li>Either way, save on transportation costs!</li>
+					<li>Find commuters or other drivers who want to share a ride</li>
+					<li>Log your carpool on <%= link_to "Smart Commute", "http://smartcommute.ca/" %> to gain benefits</li>
 				</ol>
+				<br>
+				<p>
+					Why you should offer a ride:
+				</p>
+				<ul>
+					<li>Save Money - <%= link_to "calculate your potential savings", "http://smartcommute.ca/carpooling/carpool-savings-calculator/" %></li>
+					<li>Have Fun - <%= link_to "the commuter attitudes survey", "http://smartcommute.ca/commuter-attitudes/" %> showed that 81% of carpoolers reported that they are satisfied with their commute.</li>
+					<li>Reduce Stress - sit back and let someone else do the driving for a change</li>
+					<li>Bypass Traffic - take advantage of the high-occupancy vehicle (HOV) lanes</li>
+				</ul>
 				<div class="top-buffer">
   					<%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
   				</div>
@@ -33,19 +46,20 @@
 	</div>
 	<div class="col-xs-6">
 		<div class="panel panel-primary">
-			<div class="panel-heading" style="background-color: #1A6A82;">
+			<div class="panel-heading" style="background-color: #4178BE;">
 				<h4 class="panel-title text-center">
 					<i class="fa fa-bus fa-2x"></i>
 					<hr>
-					Take public transit?
+					Need a Ride?
 				</h4>
 			</div>
 			<div class="panel-body">
 				<ol>
+					<li>Look at the available <%= link_to "Carpool Offers", locations_path %></li>
 					<li>Find a potential carpool partner based on location and schedules</li>
 					<li>Reach out to them by their email, or on Sametime</li>
-					<li>Meet with them in person to plan out meeting times, pickup locations, and reimbursement</li>
-					<li>Save on transportation time and costs!</li>
+					<li>Meet with them in person to plan out meeting times, pickup locations, and cost sharing</li>
+					<li>Log your carpool on <%= link_to "Smart Commute", "https://explore.smartcommute.ca" %> to gain benefits</li>
 				</ol>
 				<div class="top-buffer">
   					<%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-info btn-block" %>
@@ -57,6 +71,9 @@
 <div class="row top-buffer">
 	<div class="col-xs-12 col-md-offset-2 col-md-8 text-center">
   		<%= link_to "Find out more", about_path, class: "btn btn-warning" %>
+  		<p class="top-buffer">
+			<%= link_to "Smart Commute", "http://smartcommute.ca" %> supports carpooling in the GTA, and IBM is a corporate sponsor.
+  		</p>
 	</div>
 </div>
 

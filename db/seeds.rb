@@ -1,17 +1,9 @@
-User.create!(name:  "Peter Example",
+User.create!(name:  "Peter Ju (Admin)",
              email: "jupeter5@ca.ibm.com",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: true,
-						 activated: true,
-						 activated_at: Time.zone.now)
+             admin: true)
 
 User.create!(name:  "Nonadmin Example",
-             email: "nonadmin@ca.ibm.com",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             activated: true,
-             activated_at: Time.zone.now)
+             email: "nonadmin@ca.ibm.com")
 
 Location.create!(name:		"8200 Warden",
                  image_name: "8200.jpg",
@@ -24,7 +16,7 @@ Location.create!(name:		"8200 Warden",
 								 region:	"Toronto")
 
 Location.create!(name:    "3600 Steeles",
-                 image_name: "3600.jpeg",
+                 image_name: "3600.jpg",
                  description: "IBM Canada's head offices are currently located in Markham, Ontario and have 
                  been there since the early 1980s. The current building IBM occupies is located at 3600 Steeles 
                  Avenue East and was completed in 1995. IBM Canada's previous head office was located across 

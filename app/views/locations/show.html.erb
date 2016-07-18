@@ -4,8 +4,16 @@
 		<small>Carpools for</small> <br> <%= @location.name %>
 	</h1>
 	<div class="col-md-offset-3 col-md-6">
-		<%= link_to "Offer a Carpool", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
+		<%= link_to "Offer a Carpool", new_offer_path, class: "btn btn-md btn-primary btn-block" %>
 	</div>
+</div>
+<div class="row text-center">
+	<p>
+		Even if you don't see a suitable carpool for you now, keep checking back often!
+	</p>
+	<p>
+		By using this listing service, you agree to the <%= link_to "terms and conditions", legal_path %>.
+	</p>
 </div>
 <div class="row">
 	<div class="col-md-8">
@@ -17,9 +25,10 @@
 		<%= will_paginate @offers %>
 		<% end %>
 	</div>
+
 	<div class="col-md-4" id="sidebar">
 		<div class="affix-container" data-spy="affix" data-offset-top="200" style="top:50px;">
-		<hr>
+		<h3>&nbsp;</h3>
 		<h2>About this location</h2>
 		<%= image_tag(@location.image_name, :alt => @location.image_name, :class => "img-responsive") %>
 		<h3><%= @location.name %></h3>

@@ -1,10 +1,10 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<h1>Login</h1>
 
-<p class="text-center">
-  Users need to be registered to offer carpools.
+<p class="text-center lead">
+  Users need to be logged-in to offer carpools.
   <br>
-  You don't need an account to just find rides!
+  Log in using your IBM Intranet Credentials
 </p>
 
 <div class="row top-buffer">
@@ -22,11 +22,11 @@
         <span>Remember me</span>
       <% end %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "Log in", class: "btn btn-primary top-margin" %>
     <% end %>
     <br>
-    <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-success btn-sm btn-block" %>
-		<p class="top-buffer">Forgot your password? <%= link_to "Reset password", new_password_reset_path %></p>
-    <p>Contact <a href="mailto:futureblue@ca.ibm.com">futureblue@ca.ibm.com</a> for more account-related help.</p>
+    <!--<%= link_to "Sign up", signup_path, class: "btn btn-lg btn-success btn-sm btn-block" %>-->
+		<!--<p class="top-buffer">Forgot your password? <%= link_to "Reset password", new_password_reset_path %></p>-->
+    <p class="top-margin text-center">Contact <a href="mailto:futureblue@ca.ibm.com">futureblue@ca.ibm.com</a> for account-related help.</p>
   </div>
 </div>

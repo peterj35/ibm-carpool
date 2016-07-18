@@ -3,4 +3,5 @@ $(document).ready(function(){
 	$('#offer_postal').popover();
 	$('#offer_brief').popover();
 	$('#offer_specific_location').popover();
+	$('#legalModal').modal('show');
 })
