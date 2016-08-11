@@ -260,9 +260,10 @@ input {
 .offers {
   list-style: none;
   padding: 0;
-  font-family: 'Times New Roman', 'Neuton', serif;
+  /*font-family: 'Times New Roman', 'Neuton', serif;*/
+  font-size: 1em;
   li {
-    padding: 10px 0;
+    padding: 40px 0;
     border-top: 1px solid #e8e8e8;
   }
   .title {
@@ -308,4 +309,11 @@ input {
   .btn {
     font-family: 'Montserrat', sans-serif;
   }
+}
+
+
+/* home */
+
+.jumbotron {
+  width: 100% !important;
 }
