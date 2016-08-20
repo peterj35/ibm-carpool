@@ -1,6 +1,7 @@
 @import "accessible";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "colors";
 
 $gray-medium-light: #eaeaea;
 
@@ -25,7 +26,7 @@ $gray-medium-light: #eaeaea;
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -254,6 +255,21 @@ input {
   text-align: center;
 }
 
+.home-locations{
+  a {
+    text-decoration: none;
+  }
+  list-style: none;
+  font-size: 2em;
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+    }
+  }
+}
+
 
 /* offers */
 
@@ -315,5 +331,24 @@ input {
 /* home */
 
 .jumbotron {
-  width: 100% !important;
+  color: white;
+  background: url('cp3.png') no-repeat center center;
+  width: 100%;
+  background-size: 100%;
+  h2 {
+    color: inherit;
+  }
 }
+
+.feature-panel {
+  display: table;
+  table-layout: fixed;
+  min-width: 100%;
+  
+  .va-middle {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+  }
+}
+

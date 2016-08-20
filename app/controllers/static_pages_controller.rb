@@ -1,5 +1,9 @@
 class StaticPagesController < ApplicationController
+
+  layout "home", only: [:home]
+
   def home
+    @locations = Location.all
   end
 
   def about
