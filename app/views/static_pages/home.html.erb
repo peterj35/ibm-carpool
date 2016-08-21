@@ -28,7 +28,7 @@
   </div>
 
   <div class="row top-buffer feature-panel">
-    <div class="col-md-7 hidden-sm">
+    <div class="col-md-7 hidden-sm hidden-xs">
       <%= image_tag("driving-1-sm.jpg", :class => "img-rounded", :width => "150%") %>
     </div>
     <div class="col-md-5 va-middle">
@@ -40,20 +40,20 @@
     </div>
   </div>
   <div class="row top-buffer feature-panel">
-    <div class="col-md-7 hidden-sm">
+    <div class="col-md-7 hidden-sm hidden-xs">
       <%= image_tag("commuters.jpg", :class => "img-rounded", :width => "150%") %>
     </div>
     <div class="col-md-5 va-middle">
       <span>
         <h3>Need a Ride?</h3>
-        <p class="text-muted">Browse through Carpool Offers and find a ride from a trusted coworker.</p>
+        <p class="text-muted">Browse through Carpool Offers and find a ride with a trusted coworker.</p>
         <%= link_to "View Carpools", locations_path, class: "btn btn-block btn-primary" %>
       </span>
     </div>
   </div>
 
   <div class="row top-buffer">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h4 class="panel-title text-center">
@@ -85,9 +85,9 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="panel panel-primary">
-        <div class="panel-heading" style="background-color: #4178BE;">
+        <div class="panel-heading">
           <h4 class="panel-title text-center">
             <i class="fa fa-bus fa-2x"></i>
             <hr>
@@ -107,7 +107,7 @@
             IBM employees participating in the Carpool Program are eligible to participate in the Smart Commute Emergency Ride Home (ERH) Program. ERH provides commuters at Smart Commute workplaces with reimbursement for transportation used during unplanned events and emergencies. See <%= link_to "Smart Commute ERH", "http://smartcommute.ca/more-options/emergency-ride-home/" %> for full details.
           </p>
           <div class="top-buffer">
-              <%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-info btn-block" %>
+              <%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-primary btn-block" %>
           </div>
         </div>
       </div>

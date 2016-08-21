@@ -1,6 +1,8 @@
 /* Accessibility Fixes */
 
-/* $brand-primary: #264A60; */
+@import "colors";
+
+$brand-primary: $ibm-blue-50; 
 $brand-success: #2D660A;
 $brand-info:	#4178BE;
 $brand-danger:	#DC2A2A;
