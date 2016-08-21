@@ -3,16 +3,30 @@
   <h1>Carpool Buddy</h1>
   <hr>
   <h2>
-    Share a ride, slow Global Warming, meet new friends!
-    <div class="top-buffer"></div>
-    <%= link_to "Offer Carpool", new_offer_path, class: "btn btn-lg btn-primary" %>
-    <%= link_to "View Carpools", locations_path, class: "btn btn-lg btn-info" %>
+    Share a ride with a coworker and reduce carbon emissions
+    <div class=""></div>
+<!--     <%= link_to "Offer Carpool", new_offer_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "View Carpools", locations_path, class: "btn btn-lg btn-info" %> -->
     <br>
     <%= link_to "Check out the benefits", benefits_path, class: "btn btn-lg btn-success top-margin" %>
   </h2>
 </div>
 
+
+
 <div class="container">
+
+  <div class="row top-buffer">
+    <div class="text-center">
+      <div class="home-locations">
+        <h2>Select Your Location</h2>
+        <!-- <ul class="home-locations"> -->
+          <%= render @locations %>
+        <!-- </ul> -->
+      </div>
+    </div>
+  </div>
+
   <div class="row top-buffer feature-panel">
     <div class="col-md-7 hidden-sm">
       <%= image_tag("driving-1-sm.jpg", :class => "img-rounded", :width => "150%") %>
@@ -20,8 +34,8 @@
     <div class="col-md-5 va-middle">
       <span>
         <h3>Drive to Work?</h3>
-        <p>Post your ride and have coworkers reach out to you.</p>
-        <%= link_to "Offer Carpool", new_offer_path, class: "btn btn-primary" %>
+        <p class="text-muted">Post your ride quickly and easily, and have coworkers reach out to you through your work email.</p>
+        <%= link_to "Offer Carpool", new_offer_path, class: "btn btn-block btn-primary" %>
       </span>
     </div>
   </div>
@@ -32,20 +46,9 @@
     <div class="col-md-5 va-middle">
       <span>
         <h3>Need a Ride?</h3>
-        <p>Browse through Carpool Offers and find a ride.</p>
-        <%= link_to "Offer Carpool", new_offer_path, class: "btn btn-primary" %>
+        <p class="text-muted">Browse through Carpool Offers and find a ride from a trusted coworker.</p>
+        <%= link_to "View Carpools", locations_path, class: "btn btn-block btn-primary" %>
       </span>
-    </div>
-  </div>
-
-  <div class="row top-buffer">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="">
-        <h2>Select Your Location</h2>
-        <ul class="home-locations">
-          <%= render @locations %>
-        </ul>
-      </div>
     </div>
   </div>
 

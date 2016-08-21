@@ -1,5 +1,12 @@
 <% if current_page?(url_for(:controller => 'static_pages', :action => 'home')) %>
-  <li><%= link_to location.name, location %></li>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+<!--       <%= link_to image_tag(location.image_name, :alt => location.image_name, :class => "img-responsive"), location %> -->
+      <div class="caption">
+        <h3><%= link_to location.name, location %></h3>
+      </div>
+    </div>
+  </div>
 <% else %>
   <div class="row">
     <li>
