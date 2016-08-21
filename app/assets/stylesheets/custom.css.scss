@@ -1,7 +1,9 @@
 /* The Master Stylesheet for IBM Carpool Buddy.
 
 Some general style rules:
-  - links or buttons, when hovered over, should get darker (light link ->hover-> darker)
+  - links or buttons that are in the main view, when hovered over, 
+    should get lighter (link ->hover-> lighter ibm-shade of link)
+  - the reverse is true for the navbar (link ->hover-> darker)
   - stick to using the IBM design colors (http://www.ibm.com/design/language/resources/swatchbook/)
   - use scss to isolate components as much as possible
 
@@ -87,6 +89,10 @@ h4.panel-title {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .panel-body{

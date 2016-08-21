@@ -1,4 +1,5 @@
 /* Overriding Bootstrap buttons with custom colors */
+/* The disabled versions of buttons HAVE NOT BEEN overriden, override as necessary */
 
 @import "colors";
 
@@ -118,26 +119,26 @@ fieldset[disabled] .btn-primary.focus {
 }
 .btn-success {
   color: #fff;
-  background-color: $ibm-green-40;
-  border-color: $ibm-green-30;
+  background-color: $ibm-teal-40;
+  border-color: $ibm-teal-50;
 }
 .btn-success:focus,
 .btn-success.focus {
   color: #fff;
-  background-color: $ibm-green-50;
-  border-color: $ibm-green-40;
+  background-color: $ibm-teal-30;
+  border-color: $ibm-teal-40;
 }
 .btn-success:hover {
   color: #fff;
-  background-color: $ibm-green-50;
-  border-color: $ibm-green-40;
+  background-color: $ibm-teal-30;
+  border-color: $ibm-teal-40;
 }
 .btn-success:active,
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
   color: #fff;
-  background-color: $ibm-green-50;
-  border-color: $ibm-green-40;
+  background-color: $ibm-teal-30;
+  border-color: $ibm-teal-40;
 }
 .btn-success:active:hover,
 .btn-success.active:hover,
@@ -149,8 +150,8 @@ fieldset[disabled] .btn-primary.focus {
 .btn-success.active.focus,
 .open > .dropdown-toggle.btn-success.focus {
   color: #fff;
-  background-color: $ibm-green-50;
-  border-color: $ibm-green-40;
+  background-color: $ibm-teal-30;
+  border-color: $ibm-teal-40;
 }
 .btn-success:active,
 .btn-success.active,
@@ -341,6 +342,123 @@ fieldset[disabled] .btn-danger.focus {
   border-color: #d43f3a;
 }
 .btn-danger .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+
+
+.btn-teal {
+  color: #fff;
+  background-color: $ibm-teal-60;
+  border-color: #ibm-teal-70;
+}
+.btn-teal:focus,
+.btn-teal.focus {
+  color: #fff;
+  background-color: $ibm-teal-50;
+  border-color: $ibm-teal-60;
+}
+.btn-teal:hover {
+  color: #fff;
+  background-color: $ibm-teal-50;
+  border-color: $ibm-teal-60;
+}
+.btn-teal:active,
+.btn-teal.active,
+.open > .dropdown-toggle.btn-teal {
+  color: #fff;
+  background-color: $ibm-teal-50;
+  border-color: $ibm-teal-60;
+}
+.btn-teal:active:hover,
+.btn-teal.active:hover,
+.open > .dropdown-toggle.btn-teal:hover,
+.btn-teal:active:focus,
+.btn-teal.active:focus,
+.open > .dropdown-toggle.btn-teal:focus,
+.btn-teal:active.focus,
+.btn-teal.active.focus,
+.open > .dropdown-toggle.btn-teal.focus {
+  color: #fff;
+  background-color: $ibm-teal-50;
+  border-color: $ibm-teal-60;
+}
+.btn-teal:active,
+.btn-teal.active,
+.open > .dropdown-toggle.btn-teal {
+  background-image: none;
+}
+.btn-teal.disabled:hover,
+.btn-teal[disabled]:hover,
+fieldset[disabled] .btn-teal:hover,
+.btn-teal.disabled:focus,
+.btn-teal[disabled]:focus,
+fieldset[disabled] .btn-teal:focus,
+.btn-teal.disabled.focus,
+.btn-teal[disabled].focus,
+fieldset[disabled] .btn-teal.focus {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-teal .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+
+.btn-gray {
+  color: #fff;
+  background-color: $ibm-gray-60;
+  border-color: #ibm-gray-70;
+}
+.btn-gray:focus,
+.btn-gray.focus {
+  color: #fff;
+  background-color: $ibm-gray-50;
+  border-color: $ibm-gray-60;
+}
+.btn-gray:hover {
+  color: #fff;
+  background-color: $ibm-gray-50;
+  border-color: $ibm-gray-60;
+}
+.btn-gray:active,
+.btn-gray.active,
+.open > .dropdown-toggle.btn-gray {
+  color: #fff;
+  background-color: $ibm-gray-50;
+  border-color: $ibm-gray-60;
+}
+.btn-gray:active:hover,
+.btn-gray.active:hover,
+.open > .dropdown-toggle.btn-gray:hover,
+.btn-gray:active:focus,
+.btn-gray.active:focus,
+.open > .dropdown-toggle.btn-gray:focus,
+.btn-gray:active.focus,
+.btn-gray.active.focus,
+.open > .dropdown-toggle.btn-gray.focus {
+  color: #fff;
+  background-color: $ibm-gray-50;
+  border-color: $ibm-gray-60;
+}
+.btn-gray:active,
+.btn-gray.active,
+.open > .dropdown-toggle.btn-gray {
+  background-image: none;
+}
+.btn-gray.disabled:hover,
+.btn-gray[disabled]:hover,
+fieldset[disabled] .btn-gray:hover,
+.btn-gray.disabled:focus,
+.btn-gray[disabled]:focus,
+fieldset[disabled] .btn-gray:focus,
+.btn-gray.disabled.focus,
+.btn-gray[disabled].focus,
+fieldset[disabled] .btn-gray.focus {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-gray .badge {
   color: #d9534f;
   background-color: #fff;
 }
