@@ -1,6 +1,20 @@
+/* The Master Stylesheet for IBM Carpool Buddy.
+
+Some general style rules:
+  - links or buttons that are in the main view, when hovered over, 
+    should get lighter (link ->hover-> lighter ibm-shade of link)
+  - the reverse is true for the navbar (link ->hover-> darker)
+  - stick to using the IBM design colors (http://www.ibm.com/design/language/resources/swatchbook/)
+  - use scss to isolate components as much as possible
+
+*/
+
+
 @import "accessible";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "colors";
+@import "button-overrides";
 
 $gray-medium-light: #eaeaea;
 
@@ -25,7 +39,7 @@ $gray-medium-light: #eaeaea;
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -77,6 +91,10 @@ p {
   line-height: 1.7em;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .panel-body{
   ol {
     li {
@@ -92,8 +110,8 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.5em;
-  color: #152935;
-  text-transform: uppercase;
+  color: $ibm-blue-80;
+  /*text-transform: uppercase;*/
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -104,12 +122,34 @@ p {
   text-decoration: none;
 }
 
-.navbar-default .navbar-nav li a{
-  color: #012B22;
+.navbar-default .navbar-nav li a {
+  color: $ibm-blue-60;
+  position: relative;
+}
+
+.navbar-default .navbar-nav li a:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $ibm-blue-70;
+  visibility: hidden;
+  -webkit-tranform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar-default .navbar-nav li a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .navbar-default .navbar-nav li a:hover{
-  color: #006D5D;
+  color: $ibm-blue-70;
 }
 
 /* footer */
@@ -254,15 +294,31 @@ input {
   text-align: center;
 }
 
+.home-locations {
+  a {
+    text-decoration: none;
+  }
+  list-style: none;
+  font-size: 1.5em;
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+    }
+  }
+}
+
 
 /* offers */
 
 .offers {
   list-style: none;
   padding: 0;
-  font-family: 'Times New Roman', 'Neuton', serif;
+  /*font-family: 'Times New Roman', 'Neuton', serif;*/
+  font-size: 1em;
   li {
-    padding: 10px 0;
+    padding: 40px 0;
     border-top: 1px solid #e8e8e8;
   }
   .title {
@@ -309,3 +365,36 @@ input {
     font-family: 'Montserrat', sans-serif;
   }
 }
+
+
+/* home */
+
+.jumbotron {
+  color: white;
+  background: url('cp3.png') no-repeat center center;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  h2 {
+    color: inherit;
+  }
+}
+
+.feature-panel {
+  display: table;
+  table-layout: fixed;
+  min-width: 100%;
+  
+  .va-middle {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+  }
+
+  h3 {
+    font-size: 2em;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+  }
+}
+
