@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="An application to help IBMers find carpool partners." />
+  <meta name="keywords" content="IBM,Carpool,Buddy,Carpool Buddy" />
+  <meta name="author" content="Peter Ju" />
+  <meta name="owner" content="Peter Ju" />
+  <meta name="dc.date" scheme="W3CDTF" content="2016-05-31" />
+  <meta name="dc.language" content="CA" />
+  <meta name="dc.rights" />
+  <meta name="ibm.country" content="CA" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="security" content="low" />
+  <meta name="source" content="vXX delivery:IBM authoring:IBM" />
+  <meta name="IBM.Effective" scheme="W3CDTF" content="YYYY-MM-DD" />
+  <title><%= full_title(yield(:title)) %></title>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Montserrat|Neuton:400' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'layouts/header' %>
+  <div class="" role="main">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %><a href="" class="close" data-dismiss="alert">&times;</a></div>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
+</body>
+</html>

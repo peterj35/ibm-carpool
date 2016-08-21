@@ -4,11 +4,12 @@
 
 <hr>
 
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
+<div class="row" id="offer-carpool">
+  <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h2 class="panel-title">Offering a Carpool</h2>
+        <%= image_tag("biker-crop.jpg", :class => "img-responsive") %>
+        <h4 class="panel-title text-center top-margin">Offering a Carpool</h4>
       </div>
       <div class="panel-body">
         <p>
@@ -17,11 +18,37 @@
         <p>
           When you submit your offer, it will be viewable to all IBMers looking for a carpool partner using the Carpool Buddy. All you need to do now is wait for potential riders to either ping or email you!
         </p>
+        <hr>
+        <ol>
+          <li>Post your drive to work</li>
+          <li>Find commuters or other drivers who want to share a ride</li>
+          <li>Log your carpool on <%= link_to "Smart Commute", "http://smartcommute.ca/" %> to gain benefits</li>
+          <li>Once your carpool has been filled, edit the offer to mark it as filled.</li>
+        </ol>
+        <br>
+        <p>
+          Why you should offer a ride:
+        </p>
+        <ul>
+          <li>Save Money - <%= link_to "calculate your potential savings", "http://smartcommute.ca/carpooling/carpool-savings-calculator/" %></li>
+          <li>Have Fun - <%= link_to "the commuter attitudes survey", "http://smartcommute.ca/commuter-attitudes/" %> showed that 81% of carpoolers reported that they are satisfied with their commute.</li>
+          <li>Reduce Stress - sit back and let someone else do the driving for a change</li>
+          <li>Bypass Traffic - take advantage of the high-occupancy vehicle (HOV) lanes</li>
+        </ul>
+        <div class="home-panel-spacer"></div>
+        <div class="top-buffer">
+          <%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="row" id="find-carpool">
+  <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h2 class="panel-title">Finding a Carpool</h2>
+        <%= image_tag("woman-typing-crop.jpg", :class => "img-responsive") %>
+        <h4 class="panel-title text-center top-margin">Finding a Carpool</h4>
       </div>
       <div class="panel-body">
         <p>
@@ -30,11 +57,27 @@
         <p>
           To use postal codes to identify towns or locations, you can search the offerer's postal code on a service like <%= link_to "Google Maps", "https://www.google.ca/maps" %>.
         </p>
+        <hr>
+        <ol>
+          <li>Look at the available <%= link_to "Carpool Offers", locations_path %></li>
+          <li>Find a potential carpool partner based on location and schedules</li>
+          <li>Reach out to them by their email, or on Sametime</li>
+          <li>Meet with them in person to plan out meeting times, pickup locations, and cost sharing</li>
+          <li>Log your carpool on <%= link_to "Smart Commute", "https://explore.smartcommute.ca" %> to gain benefits</li>
+        </ol>
+        <br>
+        <p class="small">
+          IBM employees participating in the Carpool Program are eligible to participate in the Smart Commute Emergency Ride Home (ERH) Program. ERH provides commuters at Smart Commute workplaces with reimbursement for transportation used during unplanned events and emergencies. See <%= link_to "Smart Commute ERH", "http://smartcommute.ca/more-options/emergency-ride-home/" %> for full details.
+        </p>
+        <div class="top-buffer">
+            <%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-info btn-block" %>
+        </div>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h2 class="panel-title">Driver &amp; Rider Tips to Solidify a Carpool</h2>
+        <%= image_tag("cafe-meeting.jpg", :class => "img-responsive") %>
+        <h4 class="panel-title text-center top-margin">Driver &amp; Rider Tips to Solidify a Carpool</h4>
       </div>
       <div class="panel-body">
         <p>
@@ -55,7 +98,10 @@
     <p class="lead text-center">
       Get started now:
     </p>
-      <%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
-      <%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-info btn-block" %>
+    <%= link_to "Offer a Ride", new_offer_path, class: "btn btn-lg btn-primary btn-block" %>
+    <%= link_to "View Carpool Offers", locations_path, class: "btn btn-lg btn-info btn-block" %>
+    <p class="lead text-center top-buffer">
+      If you have any questions or comments, please do not hesitate to <%= link_to "contact", contact_path %> us.
+    </p>
   </div>
 </div>
