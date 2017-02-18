@@ -16,22 +16,42 @@
   </p>
 </div>
 <div class="row">
-  <div class="col-md-8">
-    <% if @location.offers.any? %>
-      <h3>Offers (<%= @location.offers.count %>)</h3>
-      <ol class="offers">
-        <%= render @offers %>
-      </ol>
-      <%= will_paginate @offers %>
-    <% end %>
-  </div>
-  <div class="col-md-4">
-    <h3>&nbsp;</h3>
-    <h2>About this location</h2>
-    <%= image_tag(@location.image_name, :alt => @location.image_name, :class => "img-responsive") %>
-    <h3><%= @location.name %></h3>
-    <p>
-      <%= @location.description %>
-    </p>
-  </div>
+	<div class="col-md-8">
+		<% if @location.offers.any? %>
+		<h3>Offers (<%= @location.offers.count %>)</h3>
+		<ol class="offers">
+			<%= render @offers %>
+		</ol>
+		<%= will_paginate @offers %>
+		<% end %>
+	</div>
+
+	<div class="col-md-4" id="sidebar">
+		<div class="affix-container" data-spy="affix" data-offset-top="200" style="top:50px;">
+		<h3>&nbsp;</h3>
+
+		<h2>About this location</h2>
+		<%= image_tag(@location.image_name, :alt => @location.image_name, :class => "img-responsive") %>
+		<h3><%= @location.name %></h3>
+		<p>
+			<%= @location.description %>
+		</p>
+		</div>
+	</div>
 </div>
+<script type="text/javascript">
+$(function() {
+   var $affix = $(".affix-container"), 
+       $parent = $affix.parent(), 
+       resize = function() { $affix.width($parent.width()); };
+   $(window).resize(resize); 
+   resize();
+});
+</script>
+<style>
+@media screen and (max-width: 992px){
+	#sidebar{
+		display: none;
+	}
+}
+</style>
